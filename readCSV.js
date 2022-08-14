@@ -7,9 +7,9 @@ function getDataFromCSV(filePath) {
   // "./data/authors.csv"
   return new Promise((resolve, reject) => {
   fs.createReadStream(filePath)
-    .pipe(parse({ columns:true, delimiter: ";"}))
+    .pipe(parse({ columns:true, delimiter: ";",trim: true}))
     .on("data", (row) => {
-      data.push(row);
+        data.push(row);
     })
     .on("end", () => {
       console.log(data);

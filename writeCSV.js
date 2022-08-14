@@ -8,10 +8,11 @@ function addDataToCSV(filePath, data) {
       data,
       {
         header: false,
+        delimiter: ';'
       },
       function (err, output) {
         if (err) reject(err);
-        fs.appendFile(filePath, output, (error, result) => {
+        fs.appendFile(filePath, "\r\n"+output, 'utf-8',(error, result) => {
           if (error) reject(error);
           resolve("Data inserted successfully");
         });

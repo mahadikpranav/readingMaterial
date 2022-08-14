@@ -7,7 +7,7 @@ function getDataFromCSV(filePath) {
   // "./data/authors.csv"
   return new Promise((resolve, reject) => {
     fs.createReadStream(filePath)
-      .pipe(parse({ columns: true, delimiter: ";", trim: true, skip_empty_lines: tru,skip_records_with_empty_values: true }))
+      .pipe(parse({ columns: true, delimiter: ";", trim: true, skip_empty_lines: true,skip_records_with_empty_values: true }))
       .on("data", (row) => {
         data.push(row);
       })

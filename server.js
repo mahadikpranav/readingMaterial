@@ -3,9 +3,11 @@ const writeCSV = require("./writeCSV");
 const express = require("express");
 const book = require('./model/book.model');
 const dataPath = require('./dataPath.js');
+var cors = require('cors');
 
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 5002;
 app.use(express.json());
 app.listen(PORT, () => {

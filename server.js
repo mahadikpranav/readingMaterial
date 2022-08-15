@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 5002;
 app.use(express.json());
-app.listen(PORT, () => {
+server = app.listen(PORT, () => {
   console.log("Server Started");
 });
 
@@ -45,3 +45,5 @@ app.post("/export", async (req, res) => {
 
 app.use("/books", booksRouter);
 app.use("/magazines", magazinesRouter);
+
+module.exports = server;

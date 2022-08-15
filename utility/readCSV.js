@@ -1,6 +1,6 @@
 const fs = require("fs");
 const { parse } = require("csv-parse");
-const book = require("./model/book.model");
+const book = require("../model/book.model");
 
 function getDataFromCSV(filePath) {
   const data = [];
@@ -12,7 +12,7 @@ function getDataFromCSV(filePath) {
         data.push(row);
       })
       .on("end", () => {
-        console.log(data);
+        // console.log(data);
         resolve(data);
       })
       .on("error", (error) => {

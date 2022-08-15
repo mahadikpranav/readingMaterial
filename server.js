@@ -4,8 +4,8 @@ const express = require("express");
 const book = require('./model/book.model');
 const dataPath = require('./utility/dataPath.js');
 const cors = require('cors');
-const booksRouter = require('./books/booksRoute');
-const magazinesRouter = require('./magazines/magazineRoute');
+const booksRouter = require('./routes/books.route');
+const magazinesRouter = require('./routes/magazines.route');
 
 
 const app = express();
